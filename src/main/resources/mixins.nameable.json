@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8.5-GTNH",
+  "verbose": true,
+  "package": "me.kaitlily.nameable.mixins",
+  "refmap": "mixins.mymodid.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinItem",
+    "MixinTileEntity"
+  ],
+  "client": [
+    "MixinRenderGlobal"
+  ],
+  "server": []
+}
