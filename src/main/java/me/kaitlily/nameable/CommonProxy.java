@@ -8,7 +8,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import cpw.mods.fml.relauncher.Side;
 
 public class CommonProxy {
 
@@ -17,11 +16,6 @@ public class CommonProxy {
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
-        NETWORK_WRAPPER.registerMessage(
-            MessageTileEntityNameChangeHandler.class,
-            MessageTileEntityNameChange.class,
-            0,
-            Side.CLIENT);
         MinecraftForge.EVENT_BUS.register(new EventHandler());
     }
 
