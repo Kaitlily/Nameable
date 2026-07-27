@@ -21,23 +21,11 @@ public abstract class MixinTileEntity implements MixedTileEntity {
     @Inject(method = "readFromNBT", at = @At("HEAD"))
     public void nameable$readNameFromNBT(NBTTagCompound compound, CallbackInfo ci) {
         this.nameable$tileEntityName = compound.getString("tileEntityName");
-        if (((TileEntity) (Object) this) instanceof TileEntityFurnace) {
-            System.out.println("========================");
-            System.out.println("READING NBT FOR ENTITY");
-            System.out.println("Name: " + nameable$tileEntityName);
-            System.out.println("========================");
-        }
     }
 
     @Inject(method = "writeToNBT", at = @At("HEAD"))
     public void nameable$writeNameToNBT(NBTTagCompound compound, CallbackInfo ci) {
         compound.setString("tileEntityName", nameable$tileEntityName);
-        if (((TileEntity) (Object) this) instanceof TileEntityFurnace) {
-            System.out.println("========================");
-            System.out.println("WRITING NBT FOR ENTITY");
-            System.out.println("Name: " + nameable$tileEntityName);
-            System.out.println("========================");
-        }
     }
 
     @Override
