@@ -1,5 +1,7 @@
 package me.kaitlily.nameable;
 
+import net.minecraftforge.common.MinecraftForge;
+
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;
 
@@ -15,6 +17,7 @@ public class ClientProxy extends CommonProxy {
             MessageTileEntityNameChange.class,
             0,
             Side.CLIENT);
+        MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
         super.preInit(event);
     }
 }
